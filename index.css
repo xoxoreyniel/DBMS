@@ -1,0 +1,96 @@
+html, body {
+				height: 100%;
+		} 
+
+			body {
+				background-image: url('bg1.jpg');
+				font-family: Playfair Display, serif;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 100vh;
+				margin: 0;
+			}
+
+			.form-group {
+            	margin-bottom: 15px;
+            	text-align: left;
+            	align-items: center;
+            	flex-direction: column;
+        	}
+
+        	.form-group label {
+            	display: block;
+            	margin-bottom: 5px;
+            	color: black;
+        	}
+
+        	.form-group input {
+            	width: 100%;
+            	padding: 10px;
+            	font-size: 16px;
+            	border: 1px solid;
+            	border-radius: 5px;
+        	}
+
+			.main-container {
+				text-align: center;
+				width: 100%;
+				max-width: 400px;
+				padding: 20px;
+				background-color: whitesmoke;
+				border-radius: 8px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			}
+
+			.input-area [type="password"], input[type="text"] {
+				width: 90%;
+				padding: 10px;
+				font-size: 16px;
+				border: 1px solid black;
+				border-radius: 5px;
+			}
+
+			.login-button {
+				width: 35%;
+				padding: 10px 20px;
+				font-size: 16px;
+				color: black;
+				background-color: white;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+				transition: background-color 0.3;
+				margin: 0 auto;
+			}
+
+			.login-button:hover {
+				background-color: hotpink;
+			}
+
+			.error {
+				color: red;
+			}
+
+			.footer {
+				margin-top: 20px;
+				font-size: 14px;
+				color: lightpink;
+			}
+
+			.heart-icon {
+   				width: 50px;
+    			height: auto;
+    			margin-right: 10px;  
+    			vertical-align: middle;
+			}
+
+			a {
+    			color: deeppink;
+    			text-decoration: underline;
+			}
+
+			a:hover {
+				color: deeppink;
+    			text-decoration: underline;
+    		}

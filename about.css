@@ -1,0 +1,42 @@
+html, body{ 
+	body{ 
+		background-image:url('bg1.jpg');
+		font-family: Playfair Display, serif;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+		margin: 0;
+	}
+
+	#sidebar {
+		background-color: whitesmoke;
+ 		position: fixed;
+		top: 0px;
+  		left: 0px;
+  		width: 300px;
+  		height: 100%;
+  		overflow: hidden;
+  		text-overflow: ellipsis;
+  		white-space: nowrap;
+  		border-right: solid;
+  		border-color: black;
+	}
+	
+	#sidebar ul {
+		padding: 0;
+	}
+
+	#sidebar li {
+  		color: #000000;
+  		border-top: 1px solid;
+  	}
+
+	#sidebar .nav-item {
+  		display: block;
+  		padding: 10px 30px;
+  		color: #000000;
+  		text-decoration: none;
+  		cursor: pointer;
+  	}
+}
