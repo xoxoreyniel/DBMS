@@ -1,0 +1,99 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Bar */
+.navbar {
+    width: 100%;
+    background: lightpink;
+    padding: 12px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: black;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Main Layout */
+.layout {
+    display: flex;
+    margin-top: 80px; /* Push layout down to avoid overlap with navbar */
+    gap: 20px; /* Spacing between containers */
+    padding: 20px;
+}
+
+/* Scrollable Left Container */
+.scrollable {
+    width: 30%; /* Adjust size of left container */
+    height: 70vh; /* Limit height and make it scrollable */
+    overflow-y: auto;
+    background: #F0F0F0;
+    border-radius: 7px;
+    padding: 12px;
+    border: 1px solid #CCC;
+}
+
+.scrollable .box {
+    background: #FFF;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 7px;
+}
+
+/* Main Centered Container */
+.container {
+    flex: 1;
+    max-width: 60%;
+    padding: 12px;
+    background: #FFFFFF;
+    border-radius: 7px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #CCC;
+}
+
+.rheader {
+    transform: rotate(-3deg); 
+    position: absolute; 
+    top: 75px; 
+    left: 45px; 
+    transition: 0.4s;
+    pointer-events: auto; 
+    z-index: 99;
+
+form.rsearch input[type=text] {
+  padding: 7px;
+  font-size: 10px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.rsearch::after {
+  content: "";
+  clear: both;
+  display: table;
+}
