@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="main-container">
+        <h1>Welcome to Recipe! <img src="heart.png" class="heart-icon" alt="Heart Icon"></h1>
+        <h3 style="text-align: center; font-style: italic;">Create your account</h3>
+
+        <!-- Error message display -->
+        <p id="error-message" class="error-message"></p>
+
+        <!-- Sign Up Form -->
+        <form id="signupForm" action="register.php" method="POST" autocomplete="off">
+            <div class="form-group">
+                <label for="username">Choose your username</label>
+                <input type="text" id="username" name="username" placeholder="Enter username" required>
+                <p id="usernameError" class="error"></p>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Enter your Email</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <p id="emailError" class="error"></p>
+            </div>
+
+            <div class="form-group" style="width: 90%;">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required>
+            </div>
+
+            <div class="form-group" style="width: 90%;">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="login-button">Create Account</button>
+            </div>
+        </form>
+
+        <!-- Link to login page (if the user has an account) -->
+        <p><a href="login.html">Already have an account? Log in here.</a></p>
+
+        <!-- Success message will be displayed here -->
+        <div id="success-message" class="success-message" style="display: none;">
+            <h2>New Account Created Successfully!</h2>
+        </div>
+    </div>
+
+    <script src="dude.js"></script> <!-- Your custom JavaScript -->
+</body>
+</html>
