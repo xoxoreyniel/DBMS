@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title> Home </title>
+  </head>
+
+  <body>
+    <div class="stylesheet">
+      <link rel="stylesheet" href="dashboard.css">
+    </div>
+
+    <nav id="sidebar">
+      <h2 style="text-align: center;"> Recipφ </h2>
+        <div class="logo-container">
+          <img src="pinkbow.png">
+        </div>
+        <ul>
+          <li><a class="nav-item" href="dashboard.html"> Home </a></li>
+          <li><a class="nav-item" href="about.html"> About </a></li>
+          <li><a class="nav-item" href="recipe.html"> Recipe </a></li>
+          <li><a class="nav-item" href="purchase.html"> Purchase </a></li>
+          <li><a class="nav-item" href="index.html"> Log Out </a></li>
+        </ul>
+    </nav>
+
+    <button class="back-button" onclick="goBack()">←</button>
+
+    <script>
+      document.getElementById('logout-button').addEventListener('click', function () {
+      window.location.href = 'index.html';
+      });
+    </script>
+  </body>
+</html>

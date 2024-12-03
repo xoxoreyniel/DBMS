@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title> Recipie </title>
+  </head>
+
+  <body>
+    <div class="stylesheet">
+      <link rel="stylesheet" href="dashboard.css">
+    </div>
+
+    <div class="search-container">
+      <link rel="stylesheet" type="text/css" href="recipe.css">
+      <form action="/search" method="GET">
+        <input type="text" id="search" name="query" placeholder="search here" style="font-style: italic;">
+        <button type="submit"> Search </button>
+      </form>
+    </div>
+
+    <nav id="sidebar">
+      <h2 style="text-align: center;"> Recipφ </h2>
+        <div class="logo-container">
+          <img src="pinkbow.png">
+        </div>
+        <ul>
+          <li><a class="nav-item" href="dashboard.html"> Home </a></li>
+          <li><a class="nav-item" href="about.html"> About </a></li>
+          <li><a class="nav-item" href="recipe.html"> Recipe </a></li>
+          <li><a class="nav-item" href="purchase.html"> Purchase </a></li>
+          <li><a class="nav-item" href="recipe.html"> Back </a></li>
+          <li><a class="nav-item" href="index.html"> Log Out </a></li>
+        </ul>
+    </nav>
+
+    <h1 style="position: absolute; margin-left: 22%; margin-bottom: 40%;"> Recipe Gallery </h1>
+
+    <div class="recipe-container"> 
+      <style> 
+        .recipe-container {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          overflow: auto;
+          gap: 20px;
+          padding: 20px;
+          margin-left: 300px;
+        }
+
+        .recipe-box {
+          width: 250px;
+          border: 2px solid black;
+          border-radius: 10px;
+          overflow: auto;
+          background-color: transparent;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          cursor: pointer;
+        }
+      </style>
+
+      <div class="recipe-box" onclick="location.href='cake.html'">
+        <img src="recipes/cake/choco_cake.jpg">
+          <h2> Chocolate Cake </h2>
+      </div>
+
+      <div class="recipe-box" onclick="location.href='cake.html'">
+        <img src="recipes/cake/van_cake.jpg">
+          <h2> Vanilla Cake </h2>
+      </div>
+
+      <div class="recipe-box" onclick="location.href='cake.html'">
+        <img src="recipes/cake/sberry_cake.jpg">
+          <h2> Strawberry Cake </h2>
+      </div>
+
+      <div class="recipe-box" onclick="location.href='cake.html'">
+        <img src="recipes/cake/car_cake.jpg">
+          <h2> Carrot Cake </h2>
+      </div>
+
+      <div class="recipe-box" onclick="location.href='cake.html'">
+        <img src="recipes/cake/velvet_cake.jpg">
+          <h2> Red Velvet Cake </h2>
+      </div>
+
+      <div class="recipe-box" onclick="location.href='cake.html'">
+        <img src="recipes/cake/banana_cake.jpg">
+          <h2> Banana Cake </h2>
+      </div>
+
+      <div class="recipe-box" onclick="location.href='cake.html'">
+        <img src="recipes/cake/bcheese_cake.jpg">
+          <h2> Blueberry Cheesecake </h2>
+      </div>
+
+      <div class="recipe-box" onclick="location.href='cake.html'">
+        <img src="recipes/cake/NY_cake.jpg">
+          <h2> New York Cheesecake </h2>
+      </div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+body {
+  .search-container {
+    background-color: transparent;
+    padding: 15px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+
+  .search-container input {
+    padding: 8px;
+    width: 10%;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    right: 100px;
+  }
+
+  .search-container button {
+    padding: 8px 15px;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 50px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .search-container button:hover {
+    background-color: hotpink;
+  }
+
+  .hidden{
+    display: none;
+  }
+
+  .logo-container {
+      margin-right: 20px; 
+      margin-top: 30px;
+  }
+
+  .recipe-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: auto;
+    gap: 20px;
+    padding: 20px;
+    margin-left: 300px;
+  }
+
+  .recipe-box {
+    width: 250px;
+    border: 2px solid black;
+    border-radius: 10px;
+    overflow: auto;
+    background-color: transparent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
+  .recipe-box img {
+    width: 250px;
+    height: 170px;
+    object-fit: cover;
+  }
+
+  .recipe-box h2 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: hotpink;
+    text-align: center;
+  }
+
+  .recipe-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .back-button { 
+    width: 35%;
+    padding: 8px 15px;
+    font-size: 16px;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3;
+    margin: 0 auto;
+  }
+
+  .login-button:hover {
+    background-color: hotpink;
+  }
+}

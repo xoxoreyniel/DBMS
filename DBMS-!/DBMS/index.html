@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+<html lang='en'> 
+	<head> 
+		<title> Recipφ </title>
+	</head>
+
+	<body> 
+		<div class="stylesheet"> 
+			<link rel="stylesheet" href="index.css">
+			<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+			<meta http-equiv="Pragma" content="no-cache">
+			<meta http-equiv="Expires" content="0">
+		</div>
+
+		<div class="main-container">
+			<h1> Welcome to Reciφ <img src="heart.png" class="heart-icon"></h1>
+			<link rel="stylesheet" href="styles.css">
+			<h3 style="align-content: center; font-style: italic;"> Login to continue to your account </h3>
+
+			<p id="error-message" class="error-message"></p>
+
+			<form id="loginForm" action="dashboard.html" autocomplete="off" method="post">
+        		<div class="form-group">
+            		<label for="usernameEmail"> Username or Email </label>
+            		<input type="text" id="usernameEmail" name="usernameEmail" placeholder="Enter usernameEmail" required>
+            		<p id="error" class="error"></p>
+        		</div>
+
+        		<div class="form-group" style="width: 90%;">
+            		<label for="password"> Password </label>
+            		<input type="password" id="password" name="password" placeholder="Enter password" required>
+        		</div>
+
+        		<div class="form-group">
+            		<button type="submit" class="login-button"> Login </button>
+        		</div>
+    		</form>
+
+    		<div class="form-links">
+    			<p> Don't have an account? <a href="signup.html>"> Sign Up </a></p>
+    			<p> Forgot your password? <a href="forgotpass.html"> Reset Password </a></p>
+    		</div>
+		</div>
+
+		<script>
+        	document.getElementById("loginForm").addEventListener('submit', function(event) {
+        		const usernameEmail = document.getElementById('usernameEmail').value;
+            	const errorElement = document.getElementById('error');
+
+            	errorElement.textContent = '';
+
+            	if (!usernameEmail.includes('@')) {
+                	event.preventDefault(); 
+                	errorElement.textContent = 'The email must contain an "@" symbol to sign in.';
+            	}}
+
+            	window.onload = function () {
+    			if (performance.navigation.type === 2) { // Check if navigation is "back"
+        		window.location.href = "login.html"; // Redirect to login page
+    			}
+			};
+    	</script> 
+	</body>
+</html> 

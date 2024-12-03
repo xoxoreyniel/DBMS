@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title> Purchase </title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" type="text/css" href="purchase.css">
+  </head>
+
+  <body>
+    <div class="search-container">
+      <form action="/search" method="GET">
+        <input type="text" id="search" name="query" placeholder="search here" style="font-style: italic;">
+        <button type="submit"> Search </button>
+      </form>
+    </div>
+
+    <nav id="sidebar">
+      <h2 style="text-align: center;"> Recipφ </h2>
+      <div class="logo-container">
+        <img src="pinkbow.png" alt="Logo">
+      </div>
+      <ul>
+        <li><a class="nav-item" href="dashboard.html"> Home </a></li>
+        <li><a class="nav-item" href="about.html"> About </a></li>
+        <li><a class="nav-item" href="recipe.html"> Recipe </a></li>
+        <li><a class="nav-item" href="purchase.html"> Purchase </a></li>
+        <li><a class="nav-item" href="index.html"> Log Out </a></li>
+      </ul>
+    </nav>
+
+    <h1 style="position: fixed; margin-left: 22%; margin-bottom: 40%;"> Store </h1>
+
+    <!-- This is the wrapper div for the grid layout -->
+    <div class="product-container">
+      <!-- Each product-box here is wrapped by the grid container -->
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/pink_microwave.jpg" class="product-image">
+          <h3 class="product-name"> Samsung Pink Microwave </h3>
+          <p class="product-price" style="text-align: center;"> ₱6500</p> 
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="1" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱6500 </p> 
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/pink_stove.jpg" class="product-image">
+          <h3 class="product-name"> Big Chill Pink Stove </h3>
+          <p class="product-price" style="text-align: center;"> ₱12000 </p> 
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="1" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱12000 </p> 
+        </div>
+      </div>
+
+      <!-- Repeat for the other product-box divs -->
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/pink_microwave.jpg" class="product-image">
+          <h3 class="product-name"> Samsung Pink Microwave </h3>
+          <p class="product-price" style="text-align: center;"> ₱6500 </p> 
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="1" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱6500 </p> 
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/pink_microwave.jpg" class="product-image">
+          <h3 class="product-name"> Samsung Pink Microwave </h3>
+          <p class="product-price" style="text-align: center;"> ₱6500 </p> 
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="1" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱6500 </p> 
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/pink_microwave.jpg" class="product-image">
+          <h3 class="product-name"> Samsung Pink Microwave </h3>
+          <p class="product-price" style="text-align: center;"> ₱6500 </p> 
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="1" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱6500 </p> 
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/pink_microwave.jpg" class="product-image">
+          <h3 class="product-name"> Samsung Pink Microwave </h3>
+          <p class="product-price" style="text-align: center;"> ₱6500 </p> 
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="1" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱6500 </p> 
+        </div>
+      </div>
+
+      <div class="product-box">
+        <div class="product">
+          <img src="item/appliances/pink_microwave.jpg" class="product-image">
+          <h3 class="product-name"> Samsung Pink Microwave </h3>
+          <p class="product-price" style="text-align: center;"> ₱6500 </p> 
+          <div class="quantity-control">
+            <button class="quantity-btn minus" onclick="changeQuantity(event, -1)"> - </button>
+            <input type="number" class="quantity" value="1" min="0" step="1">
+            <button class="quantity-btn plus" onclick="changeQuantity(event, 1)"> + </button>
+          </div>
+          <p class="item-total-price" style="text-align: center;"> ₱6500 </p> 
+        </div>
+      </div>
+      
+    </div> 
+
+    <div class="cart-container">
+      <button class="cart-btn">
+        <span class="cart-icon"> 🛒 </span>
+        <span id="cart-count"> 0 </span>
+      </button>
+      <div id="cart-summary" class="cart-summary">
+        <p> Total: $<span id="total-price"> 0.00 </span></p>
+      </div>
+    </div>
+
+    <script>
+      let cart = []; // Array to store items in the cart
+
+      // Function to handle quantity changes (Increase or Decrease)
+      function changeQuantity(event, amount) {
+          let quantityInput = event.target.parentElement.querySelector('.quantity');
+          let currentQuantity = parseInt(quantityInput.value);
+
+          // Ensure quantity stays at a minimum of 0 (allow zero for "no purchase")
+          let newQuantity = Math.max(0, currentQuantity + amount);
+          quantityInput.value = newQuantity;
+
+          // Get the price of the product (strip the ₱ symbol before parsing)
+          let priceText = event.target.parentElement.previousElementSibling.textContent;
+          let price = parseFloat(priceText.replace('₱', '').trim()); // Strip the ₱ symbol and parse as number
+
+          // Update the total price for this individual product
+          let itemTotalPrice = newQuantity * price;
+          event.target.parentElement.nextElementSibling.textContent = formatPrice(itemTotalPrice); // Format the price correctly
+
+          // Now update the cart data
+          updateCart(price, newQuantity);
+      }
+
+      // Update the cart data (add or update an item in the cart)
+      function updateCart(price, quantity) {
+          if (quantity === 0) {
+              // If the quantity is 0, remove the item from the cart
+              cart = cart.filter(item => item.price !== price);
+          } else {
+              // Check if the product already exists in the cart
+              let productIndex = cart.findIndex(item => item.price === price);
+              
+              if (productIndex !== -1) {
+                  // Update existing product in the cart
+                  cart[productIndex].quantity = quantity;
+              } else {
+                  // Add new product to the cart
+                  cart.push({ price: price, quantity: quantity });
+              }
+          }
+
+          // Recalculate the cart totals
+          recalculateCart();
+      }
+
+      // Function to recalculate the total quantity and price in the cart
+      function recalculateCart() {
+          let totalQuantity = 0;
+          let totalPrice = 0;
+
+          // Loop through the cart to calculate total items and price
+          cart.forEach(item => {
+              totalQuantity += item.quantity;
+              totalPrice += item.price * item.quantity;
+          });
+
+          // Update the cart count and total price on the UI
+          document.getElementById('cart-count').textContent = totalQuantity;
+          document.getElementById('total-price').textContent = formatPrice(totalPrice);
+      }
+
+      // Helper function to format price in PHP (Peso)
+      function formatPrice(amount) {
+          return '₱' + amount.toFixed(2); // Format as PHP currency
+      }
+    </script>
+  </body>
+</html>
