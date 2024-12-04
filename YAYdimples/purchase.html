@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Page</title>
+    <link rel="stylesheet" href="purchase.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <nav id="sidebar">
+      <h2 style="text-align: center;"> Recipφ </h2>
+        <div class="logo-container">
+          <img src="pinkbow.png">
+        </div>
+        <ul>
+          <li><a class="nav-item" href="dashboard.html"> Home </a></li>
+          <li><a class="nav-item" href="about.html"> About </a></li>
+          <li><a class="nav-item" href="recipe.html"> Recipe </a></li>
+          <li><a class="nav-item" href="purchase.html"> Purchase </a></li>
+          <li><a class="nav-item" href="temp.html"> Share your recipes </a></li>
+          <li><a class="nav-item" href="temp2.html"> Browse recipes </a></li>
+          <li><a class="nav-item" href="logout.php"> Log Out </a></li>
+        </ul>
+    </nav>
+
+    <div class="product-container">
+        <div class="product-box">
+            <img src="microwave.jpg" alt="Microwave">
+            <h3>Microwave</h3>
+            <div class="product-price">₱5000</div>
+            <div class="quantity-control">
+                <button class="quantity-btn minus" onclick="updateQuantity('microwave', -1)">-</button>
+                <input type="number" class="quantity" id="microwave-quantity" value="0" min="0">
+                <button class="quantity-btn plus" onclick="updateQuantity('microwave', 1)">+</button>
+            </div>
+        </div>
+
+        <div class="product-box">
+            <img src="stove.jpg" alt="Stove">
+            <h3>Stove</h3>
+            <div class="product-price">₱7000</div>
+            <div class="quantity-control">
+                <button class="quantity-btn minus" onclick="updateQuantity('stove', -1)">-</button>
+                <input type="number" class="quantity" id="stove-quantity" value="0" min="0">
+                <button class="quantity-btn plus" onclick="updateQuantity('stove', 1)">+</button>
+            </div>
+        </div>
+
+        <div class="product-box">
+            <img src="blender.jpg" alt="Blender">
+            <h3>Blender</h3>
+            <div class="product-price">₱3000</div>
+            <div class="quantity-control">
+                <button class="quantity-btn minus" onclick="updateQuantity('blender', -1)">-</button>
+                <input type="number" class="quantity" id="blender-quantity" value="0" min="0">
+                <button class="quantity-btn plus" onclick="updateQuantity('blender', 1)">+</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-container">
+        <button class="cart-btn" id="cart-btn">
+            🛒
+        </button>
+        <div class="cart-summary">
+            <p>Total Items: <span id="cart-items">0</span></p>
+            <p>Total Price: <span id="cart-price">₱0</span></p>
+        </div>
+    </div>
+
+    <button type="button" onclick="storeOrderDetails()">Proceed to Checkout</button>
+
+    <script>
+        // Update product quantity
+        function updateQuantity(product, change) {
+            const quantityField = document.getElementById(product + '-quantity');
+            let currentQuantity = parseInt(quantityField.value);
+            currentQuantity = Math.max(0, currentQuantity + change); // Ensure quantity doesn't go below 0
+            quantityField.value = currentQuantity;
+            updateCartSummary();
+        }
+
+        // Update cart summary
+        function updateCartSummary() {
+            let totalItems = 0;
+            let totalPrice = 0;
+
+            // Get quantities and prices
+            const quantities = document.querySelectorAll('.quantity');
+            const prices = document.querySelectorAll('.product-price');
+
+            quantities.forEach((quantity, index) => {
+                totalItems += parseInt(quantity.value);
+                totalPrice += parseInt(quantity.value) * parseFloat(prices[index].textContent.replace('₱', ''));
+            });
+
+            // Update cart display
+            document.getElementById('cart-items').textContent = totalItems;
+            document.getElementById('cart-price').textContent = `₱${totalPrice.toFixed(2)}`;
+        }
+
+        // Store order details in localStorage
+        function storeOrderDetails() {
+            const orderDetails = [];
+
+            // Collect data for the order
+            document.querySelectorAll('.product-box').forEach((productBox, index) => {
+                const productName = productBox.querySelector('h3').textContent;
+                const productPrice = parseFloat(productBox.querySelector('.product-price').textContent.replace('₱', ''));
+                const quantity = parseInt(document.querySelectorAll('.quantity')[index].value);
+
+                if (quantity > 0) {
+                    orderDetails.push({
+                        product_name: productName,
+                        quantity: quantity,
+                        price: productPrice,
+                        total_price: quantity * productPrice
+                    });
+                }
+            });
+
+            // Store the order details in localStorage
+            localStorage.setItem('orderDetails', JSON.stringify(orderDetails));
+
+            // Redirect to checkout page
+            window.location.href = "checkout.html";
+        }
+    </script>
+
+</body>
+</html>

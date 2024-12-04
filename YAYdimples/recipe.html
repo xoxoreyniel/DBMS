@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title> Recipφ </title>
+    <div class="stylesheet"> 
+      <link rel="stylesheet" type="text/css" href="dashboard.css">
+    </div>
+  </head>
+
+  <body>
+    <div class="search-container">
+      <link rel="stylesheet" type="text/css" href="recipe.css">
+        <input type="text" id="search" name="query" placeholder="search here" style="font-style: italic;">
+        <button type="submit"> Search </button>
+      </form>
+    </div>
+
+    <nav id="sidebar">
+      <h2 style="text-align: center;"> Recipφ </h2>
+        <div class="logo-container">
+          <img src="pinkbow.png">
+        </div>
+        <ul>
+          <li><a class="nav-item" href="dashboard.html"> Home </a></li>
+          <li><a class="nav-item" href="about.html"> About </a></li>
+          <li><a class="nav-item" href="recipe.html"> Recipe </a></li>
+          <li><a class="nav-item" href="purchase.html"> Purchase </a></li>
+          <li><a class="nav-item" href="index.html"> Log Out </a></li>
+        </ul>
+    </nav>
+
+    <h1 style="position: absolute; margin-left: 22%; margin-bottom: 40%;"> Recipe Gallery </h1>
+
+    <div class="recipe-container" id="recipeContainer"></div>
+
+    <div class="recipe-container"> 
+      <div class="recipe-box" onclick="location.href='pastry.html'">
+        <img src="recipes/pastry.jpg">
+          <h2> Pastries </h2>
+      </div>
+
+      <div class="recipe-box" onclick="location.href='cake.html'">
+        <img src="recipes/cake.jpg">
+        <h2> Cakes </h2>
+      </div>
+
+      <div class="recipe-box" onclick="location.href='parfait.html'">
+        <img src="recipes/parfait.jpg">
+        <h2> Parfaits </h2>
+      </div>
+
+      <div class="recipe-box" onclick="location.href='cookie.html'">
+        <img src="recipes/cookie.jpg">
+        <h2> Cookies </h2>
+      </div>
+
+      <div class="recipe-box" onclick="location.href='pudcust.html'">
+        <img src="recipes/pudcust.jpg">
+        <h2> Puddings and Custards </h2>
+      </div>
+
+      <div class="recipe-box" onclick="location.href='cultural.html'">
+        <img src="recipes/cultural.png">
+        <h2> Cultural Desserts </h2>
+      </div>
+      
+      <script>
+        
+      </script>
+      
+    </div>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="purchase.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Ensure you have jQuery -->
+</head>
+<body>
+
+<h1>Order Confirmation</h1>
+
+<!-- Section to display the order details -->
+<div id="order-details-container">
+    <h3>Review Your Order</h3>
+    <table id="order-summary">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="order-items"></tbody>
+    </table>
+</div>
+
+<p><strong>Total Amount: </strong><span id="total-amount"></span></p>
+
+<form id="checkout-form" method="POST">
+    <label for="password">Enter your password to confirm purchase:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+    
+    <input type="hidden" id="order-details" name="order_details">
+    <input type="submit" value="Confirm Purchase">
+</form>
+
+<p id="message"></p>
+
+<script>
+    // Get the order details from localStorage
+    const orderDetails = JSON.parse(localStorage.getItem('orderDetails')) || [];
+    const totalAmount = orderDetails.reduce((total, item) => total + item.total_price, 0);
+
+    // Display the total amount on the page
+    document.getElementById('total-amount').textContent = `₱${totalAmount.toFixed(2)}`;
+
+    // Populate the order details table
+    const orderItemsContainer = document.getElementById('order-items');
+    orderDetails.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${item.product_name}</td>
+            <td>${item.quantity}</td>
+            <td>₱${item.price.toFixed(2)}</td>
+            <td>₱${item.total_price.toFixed(2)}</td>
+        `;
+        orderItemsContainer.appendChild(row);
+    });
+
+    // Set the order details to a hidden input field
+    document.getElementById('order-details').value = JSON.stringify(orderDetails);
+
+    // Handle the form submission with AJAX
+    $('#checkout-form').submit(function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const password = $('#password').val();
+        const orderDetails = $('#order-details').val();
+
+        // Send data to the server using AJAX
+        $.ajax({
+            url: 'process_order.php', // PHP file to process the order
+            type: 'POST',
+            data: {
+                password: password,
+                order_details: orderDetails
+            },
+            success: function(response) {
+                $('#message').text(response); // Show the response message
+
+                // If the order is successful, redirect to the purchase page after a delay
+                if (response.includes('Order placed successfully')) {
+                    setTimeout(function() {
+                        window.location.href = 'purchase.html'; // Redirect to purchase page
+                    }, 2000); // Wait 2 seconds before redirecting
+                }
+            },
+            error: function() {
+                $('#message').text("There was an error processing your order.");
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
+
+
